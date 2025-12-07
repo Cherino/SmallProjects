@@ -27,8 +27,8 @@ print("note that if you wish to use exponential functions, use 'e' to represent 
 "such that your inputs may be 0, math.i/2, x^2*math.sin(x), etc.")
 print('-'*40) #Menu specifies what inputs are valid, this makes use of the math module in py
 #bounds are defined in terms of the integration symbol S
-lower_bound = eval_func(input("Enter Lower bound for your integral: "))
-upper_bound = eval_func(input("Enter Upper bound for your integral: "))
+lower_bound = eval(input("Enter Lower bound for your integral: "))
+upper_bound = eval(input("Enter Upper bound for your integral: "))
 #steps define the sub-intervals used in the trapezoidal rule
 steps = int(input("Enter number of steps for your integral: "))
 if steps > 10000:#over 10,000 steps seems arbitrary and slows down computation so a limit is set
