@@ -17,6 +17,7 @@ def calculate_dx(func_str, x):#Calculates derivative using first principles
 def newton_raphson(func_str, derivative, initial_guess):
     fx = eval_func(func_str) #look at eval_func function @line 2
     dfx = derivative
+    h = 0.0000000001
     max_iterations = 100
     guess = initial_guess
     for i in range(max_iterations):
@@ -25,7 +26,7 @@ def newton_raphson(func_str, derivative, initial_guess):
         if df_value == 0:
             raise ValueError("Derivative is zero. No solution found.")
         next_guess = guess - f_value / df_value
-        if abs(next_guess - guess) < tolerance:
+        if abs(next_guess - guess) < h:
             print(f"Root found: {next_guess} after {i+1} iterations.")
             return next_guess
         guess = next_guess
